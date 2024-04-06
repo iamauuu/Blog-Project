@@ -1,0 +1,46 @@
+<%- include("partials/header.ejs") %>
+    <header>
+
+    </header>
+    <section class="section-board">
+        <div class="data-board">
+            <div class="data">
+                <h2>Hi, there! <br> What is going on today!</h2>
+            </div>
+            <div class="img-profile"><img src="images/Dog.jpg" alt="Dog"></div>
+        </div>
+        <div class="board">
+            <!-- <input type="text" name="feeling" id="vent" placeholder="........" class="text-post"> -->
+            <form action="/post" method="POST" class="btn-post">
+                <h2>Type what are you thinking ... </h2>
+                <textarea class="textarea" id="textarea" required name="UserPosts" rows="1" cols="35"></textarea>
+                <input type="submit" value="..Post.." class="submitpost">
+            </form>
+            <section class="post-board">
+                <% if (locals.text && text.length!==0 ) {%>
+                    <% for (let i=0; i < text.length; i++) { %>
+                        <div class="posted post<%=i%>">
+                            <p>
+                                <%=text[i]%>
+                            </p>
+                            <div class="edit-delete-btn">
+
+                                <form action="/edit" method="POST" class="btn-edit">
+                                    <input type="submit" class="editbtn" value="Edit" name="edit">
+                                </form>
+
+                                <form action="/delete" method="POST" class="btn-delete">
+                                    <input type="submit" class="deletebtn" value="Delete" name="delete">
+                                </form>
+
+                            </div>
+                            <hr>
+                        </div>
+                        <% }} else { %>
+                            <p class="none">you didn't post anything yet.</p>
+                            <% } %>
+
+            </section>
+        </div>
+    </section>
+    <%- include("partials/footer.ejs") %>

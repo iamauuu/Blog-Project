@@ -1,0 +1,229 @@
+h1,h2 {
+    margin: 0;
+}
+
+* {
+    font-family: "Besley", serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fefae0;
+    margin: 0;
+    height: 80vh;
+}
+
+.h1-start {
+    text-align: center;
+    font-family: "Besley", serif;
+    padding: 450px 0 350px;
+}
+
+.bg-start input[type=submit] {
+    font-family: "Besley", serif;
+    border: none;
+    background-color: #CCD5AE;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 500ms;
+}
+.text-post {
+    border: none;
+    background: #faedcd;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 0 20px;
+    width: 50%;
+}
+
+.submitpost {
+    padding: 0 40px;
+    font-size: 20px;
+    font-family: "Besley", serif;
+    font-weight: 600;
+    margin-left: 40px;
+    background-color: #CCD5AE;
+    border: none;
+    border-radius: 5px;
+    transition: 500ms;
+}
+
+.submitpost:hover {
+    background-color: rgb(163, 170, 138);
+    transform: translateY(-3px);
+}
+
+.bg-start input[type=submit]:hover {
+    transform: scale(1.4);
+}
+
+.btn-start {
+    text-align: center;
+}
+
+.btn-post {
+    display: flex;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 300px;
+    background-color: #d4a373;
+    animation: animate 4s ease-in-out infinite;
+}
+.textfooter{
+    display: flex;
+    justify-content: space-between;
+}
+ul {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    list-style: none;
+}
+
+li {
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #fefae0;
+}
+
+.footer-contact {
+    display: flex;
+}
+
+.Rtextfooter {
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+    color: #fefae0;
+}
+
+.data {
+    text-align: center;
+    color: #d4a373;
+    text-shadow: 1px 1px 4px rgba(255, 208, 0, 0.4);
+}
+
+.section-board {
+    margin: 100px auto;
+    width: 70%;
+    display: flex;
+}
+
+.data-board {
+    padding: 20px;
+}
+
+.img-profile>img {
+    width: 350px;
+    height: 350px;
+    margin: 40px 100px;
+    border-radius: 30%;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.board {
+    max-width: 1014.39px;
+    border: 1px solid #d4a373;
+    border-radius: 30px;
+    height: 75vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.btn-post>h2 {
+    padding: 15px 40px;
+    text-wrap: nowrap;
+}
+
+.textarea {
+border-radius: 10px;
+border: none;
+background-color: #FAEDCD;
+font-size: 18px;
+font-weight: 600;
+padding: 10px;
+resize: none;
+}
+
+.post-board {
+    width: 100%;
+    height: 90%;
+    margin-top: 20px;
+    background-color: #FAEDCD;
+    border-radius: 20px;
+    text-align: center;
+    padding: 30px;
+    overflow-x: hidden;
+        overflow-y: auto;
+}
+
+.post-board .none {
+    padding: 315px;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.posted {
+    position: relative;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.edit-delete-btn {
+    display: flex;
+    justify-content: end;
+}
+.edit-delete-btn input[type=submit] {
+    margin: 0 5px;
+    padding: 8px 20px;
+    background-color: #CCD5AE;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: 500ms;
+}
+
+.edit-delete-btn input[type=submit]:hover {
+    background-color: rgb(163, 170, 138);
+    transform: translateY(-3px);
+}
+
+@keyframes animate {
+    0%,100%{
+        clip-path: polygon(0% 51%, 3% 50%, 7% 53%, 9% 55%, 12% 59%, 16% 60%, 20% 61%, 25% 61%, 32% 58%, 36% 56%, 42% 55%, 48% 54%, 54% 54%, 60% 55%, 63% 57%, 68% 59%, 74% 59%, 78% 57%, 83% 54%, 88% 51%, 94% 50%, 98% 50%, 100% 50%, 100% 52%, 100% 100%, 0% 100%);
+    }
+    50% {
+        clip-path: polygon(0 66%, 3% 64%, 7% 60%, 11% 56%, 16% 54%, 20% 54%, 25% 57%, 29% 60%, 34% 63%, 37% 64%, 42% 65%, 47% 65%, 51% 64%, 55% 63%, 60% 60%, 66% 58%, 72% 57%, 77% 56%, 82% 57%, 87% 59%, 91% 60%, 95% 62%, 98% 63%, 100% 62%, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes moveleft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-500);
+    }
+}
+
+@keyframes moveright {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(500);
+    }
+}
