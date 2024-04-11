@@ -17,6 +17,7 @@ body {
     text-align: center;
     font-family: "Besley", serif;
     padding: 35vh 0 28vh;
+    font-size: 1.5vw;
 }
 
 .bg-start input[type=submit] {
