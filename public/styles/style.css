@@ -183,7 +183,7 @@ a {
 
 .post-board {
   /* width: 100%; */
-  min-height: 820px;
+  height: 820px;
   margin-top: 20px;
   background-color: #faedcd;
   border-radius: 20px;
