@@ -1,7 +1,4 @@
 <%- include("partials/header.ejs") %>
-    <header>
-
-    </header>
     <section class="section-board">
         <div class="data-board">
             <div class="data">
@@ -13,28 +10,43 @@
             <!-- <input type="text" name="feeling" id="vent" placeholder="........" class="text-post"> -->
             <form action="/post" method="POST" class="btn-post">
                 <h2>Type what are you thinking ... </h2>
-                <textarea class="textarea" id="textarea" required name="UserPosts" rows="1" cols="35"></textarea>
+                <textarea class="textarea" id="textarea" required name="UserPosts" rows="1" cols="50"></textarea>
                 <input type="submit" value="..Post.." class="submitpost">
             </form>
             <section class="post-board">
                 <% if (locals.text && text.length!==0 ) {%>
                     <% for (let i=0; i < text.length; i++) { %>
-                        <div class="posted post<%=i%>">
-                            <p>
-                                <%=text[i]%>
-                            </p>
-                            <div class="edit-delete-btn">
-
-                                <form action="/edit" method="POST" class="btn-edit">
-                                    <input type="submit" class="editbtn" value="Edit" name="edit">
+                        <div class="posted" name="post<%=i%>">
+                            <% if (checker==true && numberCheck==i){ %>
+                                <form action="/postedit" method="POST" class="btn-edit">
+                                    <textarea required name="EditPosts" rows="1" cols="70"
+                                        class="edittextarea"><%=text[i]%></textarea>
+                                    <input type="hidden" class="editpostbtn" value="<%=i%>" name="editpost">
+                                    <div class="edit-delete-btn">
+                                        <button type="submit">Post</button>
+                                    </div>
                                 </form>
-
-                                <form action="/delete" method="POST" class="btn-delete">
-                                    <input type="submit" class="deletebtn" value="Delete" name="delete">
                                 </form>
+                                <% }else{ %>
+                                    <p>
+                                        <%=text[i]%>
+                                    </p>
 
-                            </div>
-                            <hr>
+                                    <div class="edit-delete-btn">
+
+                                        <form action="/edit" method="POST" class="btn-edit">
+                                            <input type="hidden" class="editbtn" value="<%=i%>" name="edit">
+                                            <button type="submit">Edit</button>
+                                        </form>
+
+                                        <form action="/delete" method="POST" class="btn-delete">
+                                            <input type="hidden" class="deletebtn" value="<%=i%>" name="delete">
+                                            <button type="submit">Delete</button>
+                                        </form>
+
+                                    </div>
+                                    <% } %>
+                                        <hr>
                         </div>
                         <% }} else { %>
                             <p class="none">you didn't post anything yet.</p>
