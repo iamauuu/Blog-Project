@@ -9,16 +9,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 let userPost = [];
 let postEditCheck = false;
+let editedPost;
 
 app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
-app.get("/start", (req, res) => {
-  res.render("board.ejs", { text: userPost, checker: postEditCheck });
+app.get("/board", (req, res) => {
+  res.render("board.ejs", {
+    text: userPost,
+    checker: postEditCheck,
+    numberCheck: editedPost,
+  });
+  editedPost = undefined;
+  postEditCheck = false;
 });
 
-app.post("/start", (req, res) => {
+app.post("/board", (req, res) => {
   res.render("board.ejs", {
     text: userPost,
     checker: postEditCheck,
@@ -29,26 +36,27 @@ app.post("/start", (req, res) => {
 app.post("/post", (req, res) => {
   let userPosttext = req.body.UserPosts;
   userPost.push(userPosttext);
-  res.redirect("/start");
+  res.redirect("/board");
 });
 
 app.post("/edit", (req, res) => {
-  let editedPost = req.body.edit;
-  let postEditCheck = true;
-  res.redirect("/start");
+  editedPost = req.body.edit;
+  postEditCheck = true;
+  console.log(postEditCheck);
+  res.redirect("/board");
 });
 
 app.post("/postedit", (req, res) => {
-  let editedPost = req.body.EditPosts;
+  let numEditedPost = req.body.EditPosts;
   let markpost = req.body.editpost;
-  userPost.splice(markpost, 1, editedPost);
-  res.redirect("/start");
+  userPost.splice(markpost, 1, numEditedPost);
+  res.redirect("/board");
 });
 
 app.post("/delete", (req, res) => {
   let deletedPost = req.body.delete;
   userPost.splice(deletedPost, 1);
-  res.redirect("/start");
+  res.redirect("/board");
 });
 
 app.listen(port, () => {
